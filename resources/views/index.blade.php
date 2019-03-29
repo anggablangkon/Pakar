@@ -39,7 +39,6 @@
               <li><a href="#one"><span>Tentang Kami</span></a></li>
               <li><a href="#two"><span>Features</span></a></li>
               <li><a href="#three"><span>Pricing</span></a></li>
-              <li><a href="#four"><span>Masuk Sistem</span></a></li>
             </ul>
           </div>
         </div>
@@ -58,7 +57,7 @@
                 <h2 class="text-primary">SISTEM PAKAR</h2>
                 <h3>Identifikasi Kerusakan Kulit Wajah Untuk Proses Penggunaan Cream Asthetic and Anti Aging.</h3>
                 <div class="btn-block">
-                  <a href="#" class="btn btn-md btn-primary">Masuk Sistem</a>
+                  <a href="{{ url('/login') }}" class="btn btn-md btn-primary">Masuk Sistem</a>
                   <a href="#" class="btn btn-md btn-default"><span>Tentang Sistem</span></a>
                 </div>
               </div>
