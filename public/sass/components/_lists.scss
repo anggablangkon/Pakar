@@ -1,0 +1,39 @@
+/*
+* Lists
+* ================ */
+.list-inline{
+	li{
+		display: inline-block;
+		& + li{
+			margin-left: 15px;
+		}
+		.icon{
+			font-size: 25px;
+			color: #fff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&:hover{ color: $brand-primary; }
+		}
+	}
+}
+
+* + .market-list{ margin-top: 20px; }
+.market-list{
+	li + li{ margin-top: 5px; }
+	span{
+		line-height: 1;
+		position: relative;
+		padding-left: 20px;
+		&:after{
+			content: '';
+			position: absolute;
+			top: 7px;
+			left: 0;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			@include gradient-bg(left);
+		}
+	}
+}

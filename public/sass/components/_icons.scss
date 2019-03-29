@@ -1,0 +1,22 @@
+/*
+* Icons
+* ================ */
+.icon {
+  display: inline-block;
+  text-align: center;
+}
+
+.icon-circle{ border-radius: 50%; }
+.icon-bordered{ border: 2px solid; }
+
+// Size
+.icon-sm { font-size: 14px; }
+.icon-md{ font-size: 20px; }
+.icon-lg { font-size: 50px; }
+
+// Color
+.icon-primary {
+  color: #FFF;
+  background: $brand-primary;
+}
+

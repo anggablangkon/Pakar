@@ -1,0 +1,45 @@
+// Custom Mixins
+// --------------------------------------------------
+@mixin gradient-font($angle){
+  color: $brand-primary;
+  background-image: -webkit-linear-gradient($angle, $brand-primary 0%, $brand-primary-1 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent; 
+  -o-text-fill-color: transparent; 
+  text-fill-color: transparent; 
+}
+@mixin gradient-bg($angle){
+  background: -webkit-linear-gradient($angle, $brand-primary 0%, $brand-primary-1 100%);
+  background: -moz-linear-gradient($angle, $brand-primary 0%, $brand-primary-1 100%);
+  background: -ms-linear-gradient($angle, $brand-primary 0%, $brand-primary-1 100%);
+  background: -o-linear-gradient($angle, $brand-primary 0%, $brand-primary-1 100%);
+  background: linear-gradient($angle, $brand-primary 0%, $brand-primary-1 100%);
+}
+// Utilities
+@import "mixins/helpers";
+@import "mixins/vendors-prefix";
+@import "mixins/flex";
+@import "mixins/text-utilities";
+@import "mixins/pull-mixins";
+@import "mixins/show-hide";
+@import "mixins/responsive-generator";
+@import "mixins/group";
+
+// Grid Framework
+@import "mixins/custom-grid";
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}

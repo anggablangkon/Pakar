@@ -1,0 +1,19 @@
+/* Counter
+// ====================*/
+.count-on{
+	padding: 70px 0;
+	position: relative;
+	.counter{
+		font-family: $secondary-font-family;
+		font-size: 45px;
+		font-weight: 600;
+		line-height: 1;
+		letter-spacing: 0.04em;
+		color: #fff;
+		margin: 0 auto;
+		@media(min-width: 1200px){ font-size: 67px; }
+	}
+	.icon + *{ margin-top: 20px; }
+	.counter + *{ margin-top: 10px; }
+}
+

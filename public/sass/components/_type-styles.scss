@@ -1,0 +1,59 @@
+/*
+* Type styles
+* ================ */
+#{headings()} {
+  vertical-align: baseline;
+  display: block;
+  color: $gray-dark;
+  font-weight: 400;
+  font-family: $secondary-font-family;
+
+  a:focus, a:hover {
+    color: $brand-primary;
+    text-decoration: none;
+  }
+}
+
+html body h1, .h1 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  @media (min-width: $screen-sm-min) { font-size: 67px; }
+}
+
+h2, .h2 {
+  font-size: 35px;
+  line-height: 1.2;
+  font-weight: 600;
+  @media (min-width: $screen-sm-min) { font-size: 50px; }
+}
+
+h3, .h3 {
+  font-size: 25px;
+  line-height: 1.4;
+  font-weight: 300;
+  @media (min-width: $screen-sm-min) { font-size: 28px; }
+}
+
+h4, .h4 {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  @media (min-width: $screen-sm-min) { font-size: 24px; }
+}
+
+h5, .h5 {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  @media (min-width: $screen-sm-min) { font-size: 20px; }
+}
+
+h6, .h6 {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 300;
+  @media (min-width: $screen-sm-min) { font-size: 18px; }
+}
+

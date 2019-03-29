@@ -1,0 +1,34 @@
+/*
+* Preloader styles
+* ================ */
+#page-preloader{
+  position: fixed;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom:0;
+  background: $brand-primary;
+  z-index: 3000;
+}
+ 
+.contpre{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+ 
+@keyframes clockwise {
+  to {transform: rotate(360deg) translatez(0);}
+}
+// Two-tone throbber
+.two {
+  height: 50px;
+  width:  50px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: hsla(0, 0%, 100%, 0.75)
+    hsla(0, 0%, 100%, 0.75) hsla(0, 0%, 100%, 0.25) hsla(0, 0%, 100%, 0.25);
+  border-radius: 100%;
+  animation: clockwise .5s linear infinite;
+}

@@ -1,0 +1,15 @@
+//
+// Group
+// --------------------------------------------------
+
+@mixin group($offset, $translate-offset) {
+  transform: translateY(-$translate-offset);
+  margin-bottom: -$translate-offset;
+  margin-left: -$translate-offset;
+
+  > * {
+    display: inline-block;
+    margin-top: $offset;
+    margin-left: $offset;
+  }
+}

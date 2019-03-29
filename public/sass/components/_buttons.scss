@@ -1,0 +1,105 @@
+/*
+* Buttons
+* ================ */
+
+// Base
+.btn {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+  max-width: 100%;
+  letter-spacing: 0.04em;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: $secondary-font-family;
+  border-radius: 50px;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+// Size
+.btn-sm { padding: 15px 25px; }
+.btn-md{ 
+  padding: 15px 25px 12px; 
+  @media(min-width: 992px){ padding: 18px 35px 15px; }
+}
+.btn-lg { padding: 15px 40px; }
+.btn-xl { padding: 15px 50px; }
+
+
+// Styles
+.btn-default {
+  position: relative;
+  color: $brand-primary;
+  border: none;
+  span{ @include gradient-font(left); }
+  &:after{
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 2px solid $brand-primary;
+    border-radius: 50px;
+    transition: all .3s ease;
+  }
+  
+  &:hover{ 
+    color: #fff;
+    
+    span{
+      color: #fff;
+      background-image: none;
+      -webkit-text-fill-color: currentcolor;
+      -moz-text-fill-color: currentcolor; 
+      -o-text-fill-color: currentcolor; 
+      text-fill-color: currentcolor;  
+    }
+    background: $brand-primary;
+    box-shadow: none;
+    &:after{ top: -7px; left: -7px; right: -7px; bottom: -7px; }
+  }
+  &:focus{ 
+    color: $brand-primary; 
+    background: #ddd;
+    outline: none; 
+    span{ color: $brand-primary; }
+  }
+  &:active{
+    color: $brand-primary;
+    background: #ddd;
+    &:focus{ color: #fff; background: #ddd; outline: none; }
+  }
+}
+
+.btn-primary {
+  color: #fff;
+  @include gradient-bg(left);
+  border: none;
+  box-shadow: 0 4px 15px 0 rgba(#000, 0.3);  
+  
+  &:hover{ 
+    color: #fff; 
+    box-shadow: 0px 15px 15px -10px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+  }
+  &:focus{ 
+    color: #fff; 
+    background: $brand-primary; 
+    outline: none; 
+  }
+  &:active{
+    color: #fff;
+    background: $brand-primary;
+    box-shadow: 0px 15px 15px -10px rgba(0,0,0,0.3);
+    &:focus{ background: $brand-primary; outline: none; }
+  }
+}

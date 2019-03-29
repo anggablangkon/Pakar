@@ -1,0 +1,19 @@
+/*
+* Text align
+* ================ */
+.text-center {text-align: center;}
+.text-middle {vertical-align: middle;}
+.text-left {text-align: left;}
+.text-right {text-align: right;}
+
+@mixin make-text-alignment($res){
+  .text-#{$res}-center {text-align: center;}
+  .text-#{$res}-right {text-align: right;}
+  .text-#{$res}-justify {text-align: justify;}
+  .text-#{$res}-left {text-align: left;}
+}
+
+@media (min-width: $screen-xs-min) {@include make-text-alignment("xs");}
+@media (min-width: $screen-sm-min) {@include make-text-alignment("sm");}
+@media (min-width: $screen-md-min) {@include make-text-alignment("md");}
+@media (min-width: $screen-lg-min) {@include make-text-alignment("lg");}

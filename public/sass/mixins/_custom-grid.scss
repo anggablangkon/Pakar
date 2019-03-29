@@ -1,0 +1,100 @@
+//
+// Grid mixins
+// ====================
+
+@mixin build-container($gutter: 30px) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+@mixin build-row($gutter: 30px) {
+  margin-left: ceil(($gutter / -2));
+  margin-right: floor(($gutter / -2));
+}
+
+@mixin build-col-spacing($gutter: 30px) {
+  padding-left: ceil(($gutter / 2));
+  padding-right: floor(($gutter / 2));
+}
+
+@mixin build-col($resolution, $count: 12) {
+  .col-#{$resolution}-offset-0 {
+    margin-left: 0;
+  }
+
+  @for $i from 1 through $count {
+    .col-#{$resolution}-#{$i} {
+      @include flex-basis(percentage($i / $count));
+    }
+
+    .col-#{$resolution}-offset-#{$i} {
+      margin-left: percentage($i / $count);
+    }
+
+    .col-#{$resolution}-order-#{$i} {
+      @include order($i);
+    }
+  }
+}
+
+
+@mixin build-grid-system($resolution, $col-count) {
+
+  .flex-#{$resolution} {
+    @include flex-direction(row);
+  }
+
+  .flex-#{$resolution}-reverse {
+    @include flex-direction(row-reverse);
+  }
+
+  .flex-#{$resolution}-center {
+    @include justify-content(center);
+  }
+
+  .flex-#{$resolution}-left {
+    @include justify-content(flex-start);
+  }
+
+  .flex-#{$resolution}-right {
+    @include justify-content(flex-end);
+  }
+
+  .flex-#{$resolution}-justify {
+    @include justify-content(space-between);
+  }
+
+  .flex-#{$resolution}-around {
+    @include justify-content(space-around);
+  }
+
+  .flex-#{$resolution}-top {
+    @include align-items(flex-start);
+  }
+
+  .flex-#{$resolution}-middle {
+    @include align-items(center);
+  }
+
+  .flex-#{$resolution}-bottom {
+    @include align-items(flex-end);
+  }
+  
+  .flex-item-#{$resolution}-top {
+    @include align-self(flex-start);
+  }
+
+  .flex-item-#{$resolution}-middle {
+    @include align-self(center);
+  }
+
+  .flex-item-#{$resolution}-bottom {
+    @include align-self(flex-end);
+  }
+
+  .row > {
+    @include build-col($resolution, $col-count);
+  }
+}

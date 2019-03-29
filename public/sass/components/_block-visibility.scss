@@ -1,0 +1,29 @@
+/*
+* Blocks visibility
+* ================ */
+
+@include build-visible(flex);
+@include build-visible(inline-block);
+@include build-visible(block);
+@include build-hidden();
+
+@each $alias, $res in (xs : $screen-xs-min, sm : $screen-sm-min, md : $screen-md-min, lg : $screen-lg-min, xl : $screen-xl-min){
+  @if (length($res) == 2) {
+    @media (min-width: nth($res, 1)) {
+      @include build-visible(block, $alias);
+      @include build-visible(inline-block, $alias);
+      @include build-visible(inline, $alias);
+      @include build-visible(flex, $alias);
+      @include build-hidden($alias);
+    }
+  }
+  @else {
+    @media (min-width: nth($res, 1)) {
+      @include build-visible(block, $alias);
+      @include build-visible(inline-block, $alias);
+      @include build-visible(inline, $alias);
+      @include build-visible(flex, $alias);
+      @include build-hidden($alias);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+//
+// Responsive class
+// --------------------------------------------------
+
+@mixin build-visible( $type: block, $res: null){
+  @if ($res == null) {
+    $res: ''
+  } @else {
+    $res: str_insert($res, '-', str_length($res) + 1);
+  }
+
+  @if ($type == flex) {
+    .show-#{$res}#{$type}{ display: flex !important; }
+  }
+
+  @else {
+    .show-#{$res}#{$type}{ display: $type !important; }
+  }
+}
+
+@mixin build-hidden($res: null){
+  @if ($res == null) {
+    $res: ''
+  } @else {
+    $res: str_insert($res, '-', 0);
+  }
+
+  .hide#{$res}{ display: none !important; }
+}

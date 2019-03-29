@@ -1,0 +1,128 @@
+/*
+* Bootstrap grid upgrade
+* ================ */
+
+.container {
+  @include build-container($col-spacing);
+  min-width: $container-width;
+  max-width: $container-xs-width;
+  width: auto;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: $container-sm-width;
+  }
+
+  @media (min-width: $screen-md-min) {
+    max-width: $container-md-width;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    max-width: $container-lg-width;
+  }
+
+  &.container-large {
+    @media (min-width: $screen-xl-min) {
+      max-width: $container-xl-width;
+    }
+  }
+
+  &.container-fluid {
+    max-width: none;
+  }
+}
+
+.row {
+  @include build-row($col-spacing);
+}
+
+[class*="col-"] {
+  @include build-col-spacing($col-spacing);
+}
+
+.row:before, .row:after{ content: none; }
+
+.row-no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+
+  > [class*='col'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+// Flex Styles
+// ====================
+.row {
+  @include display-flex();
+  @include flex(0 1 auto);
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+}
+
+.row > [class*='col'] {
+  @include flex(0 0 auto);
+  @include flex-basis(100%);
+}
+
+.flex {
+  @include flex-direction(row);
+}
+
+.flex-reverse {
+  @include flex-direction(row-reverse);
+}
+
+.flex-center {
+  @include justify-content(center);
+}
+
+.flex-left {
+  @include justify-content(flex-start);
+}
+
+.flex-right {
+  @include justify-content(flex-end);
+}
+
+.flex-justify {
+  @include justify-content(space-between);
+}
+
+.flex-around {
+  @include justify-content(space-around);
+}
+
+.flex-top {
+  @include align-items(flex-start);
+}
+
+.flex-middle {
+  @include align-items(center);
+}
+
+.flex-bottom {
+  @include align-items(flex-end);
+}
+
+.flex-item-top {
+  @include align-self(flex-start);
+}
+
+.flex-item-middle {
+  @include align-self(center);
+}
+
+.flex-item-bottom {
+  @include align-self(flex-end);
+}
+
+@each $resolution, $alias in ($screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl) {
+  @media (min-width: $resolution) {
+    * + [class*='col-#{$alias}-'] {
+      margin-top: 0;
+    }
+    @include build-grid-system($alias, $col-count);
+  }
+}

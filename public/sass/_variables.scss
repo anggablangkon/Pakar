@@ -1,0 +1,52 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+//== Layout settings
+$layout-boxed-width: 1200px;
+$layout-boxed-bg: #444;
+
+//== Bootstrap resolutions
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$screen-xl-min: 1800px;
+
+//== Flex Grid system
+// Define your custom flex responsive grid.
+$container-width: 300px;
+$container-xs-width: 480px;
+$container-sm-width: 750px;
+$container-md-width: 970px;
+$container-lg-width: 1200px;
+$container-xl-width: 1800px;
+
+$row-ws: 25px;
+$row-ws-sm: 30px;
+$row-ws-lg: 90px;
+
+$col-count: 12;
+$col-spacing: 30px;
+
+// Fonts
+$default-font-family: 'Roboto Slab', sans-serif;
+$secondary-font-family: 'Poppins', sans-serif;
+$fa: "FontAwesome";
+
+$default-font-weight: 400;
+$default-font-size: 16px;
+
+//== Colors
+$gray-base:               #000;
+$gray-dark:               #333;
+$gray:                    #555;
+
+$brand-primary:           #2A66C3;
+$brand-primary-1:         #00B5C1; 
+
+//== Main Colors
+$content-color: #222;
+$content-bg: #fff;
+$shadow-main: 0px 4px 20px 0 rgba(0,0,0,0.4);
+

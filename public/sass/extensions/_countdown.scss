@@ -1,0 +1,24 @@
+/* Countdown
+// ====================*/
+* + .countdown{ margin-top: 15px; }
+.countdown{
+  text-align: center;
+}
+.countdown-section {
+  display: inline-block;
+  width: 25%;
+}
+.countdown-amount {
+  font-size: 35px;
+  line-height: 1;
+  @media(min-width: 992px){ font-size: 60px; }
+}
+.countdown-period {
+  display: block;
+  padding: 10px 0;
+  @media(min-width: 480px){ font-size: 20px; }
+}
+.countdown-descr {
+    display: block;
+    width: 100%;
+}

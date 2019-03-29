@@ -1,0 +1,26 @@
+/*
+* Text-style
+* ================ */
+html body .big{ font-size: 18px; }
+// Text style
+//
+.text-italic { font-style: italic; }
+.text-normal { font-style: normal; }
+
+// Text decoration
+//
+.text-underline { text-decoration: underline; }
+
+// Text weight
+//
+.text-light { font-weight: 300; }
+.text-medium{ font-weight: 500; }
+.text-bold, strong { font-weight: 700; }
+
+// Text spacing
+//
+.letter-spacing-0{ letter-spacing: 0; }
+.letter-spacing-40{ letter-spacing: 0.04em; }
+.letter-spacing-50{ letter-spacing: 0.05em; }
+.letter-spacing-100{ letter-spacing: 0.1em; }
+
