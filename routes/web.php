@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+#penggunaan route untuk administrator
+Route::get('/index', 'PenggunaController@index');
 
 Auth::routes();
 
