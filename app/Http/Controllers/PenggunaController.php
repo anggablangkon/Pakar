@@ -15,6 +15,10 @@ class PenggunaController extends Controller
 
     public function index()
     {
-    	return view('/admin/index');
+    	#parameter url
+    	$pages = 'index';
+
+    	return view('/admin/index', compact('pages'));
     }
+
 }

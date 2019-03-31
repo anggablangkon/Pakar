@@ -15,8 +15,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-#penggunaan route untuk administrator
 Route::get('/index', 'PenggunaController@index');
+
+#penggunaan route untuk administrator
+Route::get('/datagejala', 'AdminController@datagejala');
+
+
+#penggunaan route untuk perawat
+Route::get('/pendaftaranpasien', 'PerawatController@pendaftaranpasien');
 
 Auth::routes();
 

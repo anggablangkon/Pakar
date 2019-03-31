@@ -1,2 +1,9 @@
-
-<meta http-equiv = "refresh" content = "0; url = {{ url('/index') }}" />
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <meta http-equiv="Refresh" content="0; {{ url('/index') }}">
+</body>
+</html>
