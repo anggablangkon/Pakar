@@ -22,7 +22,13 @@ Route::get('/datagejala', 'AdminController@datagejala');
 
 
 #penggunaan route untuk perawat
+Route::get('/pendaftaranpasienbaru', 'PerawatController@pendaftaranpasienbaru');
+Route::get('/prosespendaftaranpasienbaru', 'PerawatController@prosespendaftaranpasienbaru');
 Route::get('/pendaftaranpasien', 'PerawatController@pendaftaranpasien');
+
+#route aksi untuk pendaftar baru
+Route::get('/buktipendaftaran/Idanggota={id}', 'Pendaftaran\PendaftaranController@buktipendaftaran');
+
 
 Auth::routes();
 

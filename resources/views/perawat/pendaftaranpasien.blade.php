@@ -11,24 +11,107 @@
     </div>
   </div>
 <!--End-breadcrumbs-->
-
-  <!-- container fluid -->
+  
   <div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
 
-  <!--Chart-box-->    
-    <div class="row-fluid">
+    <!-- form pertama -->
+    <div class="span6">
       <div class="widget-box">
-        <div class="widget-title bg_lg"><span class="icon"><i class="icon-signal"></i></span>
-          <h5>Form Pendaftaran Pasien</h5>
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>Pendaftaran Pasein</h5>
         </div>
+        <div class="widget-content nopadding">
+          
+          <!-- form pencarian -->
+          <form action="#" method="get" class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label">No Pasien :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="" /> <br/><br/>
+                <input type="submit" name="cari" value="Search" class="btn btn-primary">
+              </div>
+            </div>
+          </form>
 
+          <form action="okejoen" method="" class="form-horizontal">
+            <div class="control-group">
+              <label class="control-label">Nama Lengkap :</label>
+              <div class="controls">
+                <input type="text" class="span11" disabled />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Jenis Kelamin</label>
+              <div class="controls">
+                <input type="password"  class="span11" disabled />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Usia</label>
+              <div class="controls">
+                <input type="text" class="span11" disabled />
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Alamat:</label>
+              <div class="controls">
+                <textarea class="span11" disabled></textarea>
+                <span class="help-block">Alamat Lengkap</span> </div>
+            </div>
+             <div class="control-group">
+              <label class="control-label">Tujuan Poli</label>
+              <div class="controls">
+                <select >
+                  <option>SKINCARE </option>
+                  <option>APOTIK</option>
+                  <option>RAWAT JALAN</option>
+                  <option>RONTGEN</option>
+                  <option>LABOLATERIUM</option>
+                  <option>EKG (REKAM JANTUNG)</option>
+                  <option>USG (ULTRASONOGRAFY)</option>
+                  <option>TERAPI INHALASI</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-actions" style="text-align: center;">
+              <button type="submit" class="btn btn-success">Simpan Pendaftaran</button>
+              <button type="reset" class="btn btn-warning">Reset</button>
+            </div>
+          </form>
+        </div>
       </div>
+
     </div>
-  <!--End-Chart-box--> 
+    <!-- end span6 --> 
+    
+    <!-- form kedua -->  
+    <div class="span6">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5 title="Rekap Anamnesis Akan Muncul Setelah Input Pendaftaran  " class="tip-bottom">Rekap Anamnesis</h5>
+        </div>
+        <div class="widget-content nopadding">
+          <form action="#" class="form-horizontal">
+           
+
+          </form>
+        </div>
+      </div>
+      
+    </div>
+    <!-- end span6 --> 
+
 
   </div>
-  <!-- end container fluid --> 
+  <!--end row fluid -->
+  
+  </div>
+  <!-- end container fluid -->
 
 </div>
+<!-- end content -->
 
 @endsection
