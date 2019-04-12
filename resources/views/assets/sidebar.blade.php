@@ -5,7 +5,9 @@
 
     <!-- sidebar digunakan untuk admin -->
     @if(Auth::user()->role == 2) 
+    <li class="@if($pages == 'datapengguna') active @endif"><a href="{{ url('/datapengguna') }}"><i class="icon icon-home"></i> <span>Data Pengguna</span></a></li>
     <li class="@if($pages == 'datagejala') active @endif"><a href="{{ url('/datagejala') }}"><i class="icon icon-home"></i> <span>Data Gejala</span></a></li>
+    <li class="@if($pages == 'datapenyakit') active @endif"><a href="{{ url('/datapenyakit') }}"><i class="icon icon-home"></i> <span>Data Penyakit</span></a></li>
   	@endif
     
     <!-- sidebar yang digunakan perawat -->

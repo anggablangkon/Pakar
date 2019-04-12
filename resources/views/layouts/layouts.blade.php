@@ -46,6 +46,10 @@
 	<script src="js/jquery.dataTables.min.js"></script> 
 	<script src="js/matrix.js"></script> 
 	<script src="js/matrix.tables.js"></script>
+	<script src="js/jquery.validate.js"></script> 
+
+	@yield('javascript')
+
 
 </body>
 </html>

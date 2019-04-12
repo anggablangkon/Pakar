@@ -29,6 +29,9 @@ Route::get('/pendaftaranpasien', 'PerawatController@pendaftaranpasien');
 #route aksi untuk pendaftar baru
 Route::get('/buktipendaftaran/Idanggota={id}', 'Pendaftaran\PendaftaranController@buktipendaftaran');
 
+#route aksi untuk pengguna baru sistem
+Route::get('/datapengguna', 'AdminController@datapengguna');
+
 
 Auth::routes();
 
