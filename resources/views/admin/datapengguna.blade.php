@@ -15,6 +15,9 @@
   <div class="row-fluid">
 
   <!--form-box-->    
+  <!-- message -->
+  	@include('helper/message')
+
         <!-- content -->
         <div class="row-fluid">
 	      <div class="span5">
@@ -24,29 +27,32 @@
 	          </div>
 	          <div class="widget-content nopadding">
 
+	          	<!-- message -->
+
 	            <form class="form-horizontal" method="post" action="{{ url('/createdatapengguna') }}" name="basic_validate" id="basic_validate" novalidate="novalidate">
+	              {{ csrf_field() }}
 	              <div class="control-group">
-	                <label class="control-label">Email Pengguna</label>
+	                <label class="control-label">Username</label>
 	                <div class="controls">
-	                  <input type="email" class="span11" name="required" id="required">
+	                  <input type="text" class="span11" name="username" id="required">
 	                </div>
 	              </div>
 	              <div class="control-group">
 	                <label class="control-label">Nama Penguna</label>
 	                <div class="controls">
-	                  <input type="text" class="span11" name="email" id="email">
+	                  <input type="text" class="span11" name="nama" >
 	                </div>
 	              </div>
 	              <div class="control-group">
 	                <label class="control-label">Password</label>
 	                <div class="controls">
-	                  <input type="text" class="span11" name="date" id="date">
+	                  <input type="password" class="span11" name="password">
 	                </div>
 	              </div>
 	              <div class="control-group">
 	                <label class="control-label">Status Pengguna</label>
 	                <div class="controls">
-		                <select class="span11" name="jk" required>
+		                <select class="span11" name="role" required>
 		                  <option value="">-- Status Pengguna --</option>
 		                  <option value="1">Perawat</option>
 		                  <option value="2">Admin</option>
@@ -100,7 +106,21 @@
 						  </td>
 		                  <td>
 		                  	<a href="" class="btn btn-mini btn-info">Edit</a>
-		                  	<a href="" class="btn btn-mini btn-danger">Hapus</a>
+		                  	<!-- modal untuk edit penggguna -->
+
+		                  	<a href="#myAlert{{ $tampilkan->id }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
+
+		                  	 <div id="myAlert{{ $tampilkan->id }}" class="modal hide">
+				              <div class="modal-header">
+				                <button data-dismiss="modal" class="close" type="button">×</button>
+				                <h3>Peringatan Sistemm !</h3>
+				              </div>
+				              <div class="modal-body">
+				                <p>Apakah anda yakin akan menghapus data dengan nama <b>{{ $tampilkan->name }}</b></p>
+				              </div>
+				              <div class="modal-footer"> <a class="btn btn-primary" href="{{ url('/deletepengguna') }}/Idanggota={{ $tampilkan->id }}">Hapus</a> <a data-dismiss="modal" class="btn" href="#">Batal</a> </div>
+				            </div>
+
 		                  </td>
 		                </tr>
 		                @endforeach

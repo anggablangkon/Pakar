@@ -27,11 +27,15 @@ Route::get('/prosespendaftaranpasienbaru', 'PerawatController@prosespendaftaranp
 Route::get('/pendaftaranpasien', 'PerawatController@pendaftaranpasien');
 
 #route aksi untuk pendaftar baru
-Route::get('/buktipendaftaran/Idanggota={id}', 'Pendaftaran\PendaftaranController@buktipendaftaran');
+Route::get('/buktipendaftaran/Idanggota={id}', 'Admin\PendaftaranController@buktipendaftaran');
 
 #route aksi untuk pengguna baru sistem
 Route::get('/datapengguna', 'AdminController@datapengguna');
 
+
+#route aksi untuk digunakan proses data pengguna
+Route::post('/createdatapengguna', 'Admin\PenggunaController@buatpengguna');
+Route::get('/deletepengguna/Idanggota={id}', 'Admin\PenggunaController@deletedatapengguna');
 
 Auth::routes();
 
