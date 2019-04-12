@@ -10,9 +10,9 @@
 <br/>
 <center>
 	<img src="https://i2.wp.com/www.tipssehatcantik.com/wp-content/uploads/2017/07/logo-bpjs2-e1505609707779.jpg?fit=300%2C83&ssl=1"> 
-	<h6>BUKTI PENDAFTARAN PASIEN ANGGOTA BARU</h6>
-
-<table style="font-size:12px;" align="center">
+	<h3>BUKTI PENDAFTARAN PASIEN ANGGOTA BARU</h3>
+	<hr/>
+<table style="font-size:18px;" align="center">
 	<thead>
 		
 	</thead>
@@ -20,33 +20,33 @@
 		<tr>
 			<td>No Anggota</td>
 			<td>:</td>
-			<td>Sp-01</td>
+			<td>Sp-0{{ $data->noanggota }}</td>
 		</tr>
 		<tr>
 			<td>Nama Anggota</td>
 			<td>:</td>
-			<td>Angga Kurniawan</td>
+			<td>{{ $data->nama }}</td>
 		</tr>
 		<tr>
 			<td>Tanggal Pendaftaran</td>
 			<td>:</td>
-			<td>12 Maret 2019</td>
+			<td>{{ $data->cdate }}</td>
 		</tr>
 		<tr>
 			<td>Usia</td>
 			<td>:</td>
-			<td>12 Tahun</td>
+			<td>{{ $data->tgl_lahir }}</td>
 		</tr>
 		<tr>
 			<td>Alamat</td>
 			<td>:</td>
-			<td>Kp Jaha Masjid Rt/Rw 10/03 </td>
+			<td> {{ $data->alamat }} </td>
 		</tr>
 	</thead>
 
 </table>
 
-	<h6>Terimakasih Telah Melakukan</h6>
+	<h3>Terimakasih Kami Ucapkan</h3>
 	
 
 </center>

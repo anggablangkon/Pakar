@@ -21,4 +21,5 @@ class PenggunaController extends Controller
     	return view('/admin/index', compact('pages'));
     }
 
+
 }

@@ -45,8 +45,8 @@
               <div class="controls">
                 <select class="span11" name="jk" required>
                   <option value="">-- Jenis Kelamin --</option>
-                  <option value="Pria">Pria</option>
-                  <option value="Wanita">Wanita</option>
+                  <option value="p">Pria</option>
+                  <option value="w">Wanita</option>
                 </select>
               </div>
             </div>
@@ -90,8 +90,8 @@
           <label>Laporan Pendaftaran Pasien Baru :</label>
           <p>Pendaftaran berhasil diproses atas nama <font color="green"> {{ $dataanggota->nama }} </font></p>        
             <ul>
-              <li><a href="{{ url('/buktipendaftaran') }}/Idanggota={{ Session::get('pendaftarananggota') }}" target="parent"> Silahkan Cetak Bukti Pendaftaran Disini </a></li>
-              <li><a href=""> Silahkan Cetak Kartu Anggota </a></li>
+              <li><a href="{{ url('/transkrippendaftaran') }}/Idanggota={{ Session::get('pendaftarananggota') }}" target="parent"> Silahkan Cetak Bukti Pendaftaran Disini </a></li>
+              <li><a href="{{ url('/idcard') }}/Idanggota={{ Session::get('pendaftarananggota') }}" target="parent"> Silahkan Cetak Kartu Anggota </a></li>
             </ul>
           @endif
 

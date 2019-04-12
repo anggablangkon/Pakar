@@ -105,15 +105,35 @@
 		                  	@endif
 						  </td>
 		                  <td>
-		                  	<a href="" class="btn btn-mini btn-info">Edit</a>
+		                  	<a href="#myEdit{{ $tampilkan->id }}" data-toggle="modal" class="btn btn-mini btn-info">Edit</a>
+		                  	<a href="#myHapus{{ $tampilkan->id }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
+		                  	
 		                  	<!-- modal untuk edit penggguna -->
-
-		                  	<a href="#myAlert{{ $tampilkan->id }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
-
-		                  	 <div id="myAlert{{ $tampilkan->id }}" class="modal hide">
+		                  	 <div id="myEdit{{ $tampilkan->id }}" class="modal hide">
 				              <div class="modal-header">
 				                <button data-dismiss="modal" class="close" type="button">×</button>
-				                <h3>Peringatan Sistemm !</h3>
+				                <h3>Perbarui Data Pengguna Atas Nama : {{ $tampilkan->name }}</h3>
+				              </div>
+				              <!-- form action -->
+				              <form action="{{ url('/editpengguna') }}" method="post">
+				              <div class="modal-body">
+				              	<!-- buat form editnya didalam sini -->
+
+				              </div>
+				              <div class="modal-footer"> 
+				              	<button class="btn btn-primary" href="{{ url('/editpengguna') }}">Hapus</button>
+				              	<button data-dismiss="modal" class="btn" href="#">Batal</button>
+				              </div>
+				              </form>
+				              <!-- end form action -->
+				            
+				            </div>
+
+		                  	<!-- modal untuk hapus pengguna -->
+		                  	 <div id="myHapus{{ $tampilkan->id }}" class="modal hide">
+				              <div class="modal-header">
+				                <button data-dismiss="modal" class="close" type="button">×</button>
+				                <h3>Peringatan Sistem !</h3>
 				              </div>
 				              <div class="modal-body">
 				                <p>Apakah anda yakin akan menghapus data dengan nama <b>{{ $tampilkan->name }}</b></p>
