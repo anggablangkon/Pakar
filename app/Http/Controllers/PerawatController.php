@@ -12,9 +12,12 @@ class PerawatController extends Controller
     public function pendaftaranpasien()
     {
     	#parameter url
-    	$pages = 'pendaftaranpasien';
+    	$pages         = 'pendaftaranpasien';
 
-    	return view('/perawat/pendaftaranpasien', compact('pages'));
+        #digunakan untuk menampilkan data pasien di seetingan 0 untuk default
+        $datapasien    = DB::table('t_dataanggota')->where('noanggota', '0')->first();
+        
+    	return view('/perawat/pendaftaranpasien', compact('pages', 'datapasien'));
     }
 
     public function pendaftaranpasienbaru()
@@ -71,5 +74,20 @@ class PerawatController extends Controller
             return redirect('/pendaftaranpasienbaru')->with('failed', 'Hallo! Data Pendaftaran Tidak Berhasil Dilakukan');
         }
 
+    }
+
+    public function pencarianpasien(Request $request)
+    {
+        #parameter url
+        $pages         = 'pendaftaranpasien';
+        $id            = $request->nopasien;
+
+        //menamngkap id 
+        $id            = substr($id, 4,5);
+        
+        #digunakan untuk menampilkan data pasien di seetingan 0 untuk default
+        $datapasien    = DB::table('t_dataanggota')->where('noanggota', $id)->first();
+        
+        return view('/perawat/pendaftaranpasien', compact('pages', 'datapasien'));
     }
 }

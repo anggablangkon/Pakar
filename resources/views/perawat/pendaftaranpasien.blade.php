@@ -25,39 +25,46 @@
         <div class="widget-content nopadding">
           
           <!-- form pencarian -->
-          <form action="#" method="get" class="form-horizontal">
+          <form action="{{ url('/pencarianpasien') }}" method="get" class="form-horizontal">
             <div class="control-group">
               <label class="control-label">No Pasien :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="" /> <br/><br/>
+                <input type="text" class="span11" name="nopasien" placeholder="" /> <br/><br/>
                 <input type="submit" name="cari" value="Search" class="btn btn-primary">
               </div>
             </div>
           </form>
 
           <form action="okejoen" method="" class="form-horizontal">
+             <div class="control-group">
+              <label class="control-label">No Pasien :</label>
+              <div class="controls">
+                <input type="text" class="span11" value="@if($datapasien->nama == 'kosong') @else PS-0{{ $datapasien->noanggota }} @endif" disabled />
+              </div>
+            </div>
             <div class="control-group">
               <label class="control-label">Nama Lengkap :</label>
               <div class="controls">
-                <input type="text" class="span11" disabled />
+                <input type="text" class="span11" value="@if($datapasien->nama == 'kosong') @else {{ $datapasien->nama }} @endif" disabled />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Jenis Kelamin</label>
               <div class="controls">
-                <input type="password"  class="span11" disabled />
+                <input type="text"  class="span11" value="@if($datapasien->jk == 'o') @elseif($datapasien->jk == 'P') Pria @else Wanita @endif"  disabled />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Usia</label>
               <div class="controls">
+                <!-- menampilkan usia dari tanggal lahir -->
                 <input type="text" class="span11" disabled />
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Alamat:</label>
               <div class="controls">
-                <textarea class="span11" disabled></textarea>
+                <textarea class="span11" disabled>@if($datapasien->nama == 'kosong') @else {{ $datapasien->alamat }} @endif</textarea>
                 <span class="help-block">Alamat Lengkap</span> </div>
             </div>
              <div class="control-group">
@@ -91,7 +98,7 @@
     <div class="span6">
       <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-          <h5 title="Rekap Anamnesis Akan Muncul Setelah Input Pendaftaran  " class="tip-bottom">Rekap Anamnesis</h5>
+          <h5 title="Rekap Anamnesis Akan Muncul Setelah Input Pendaftaran  " class="tip-bottom">Rekap Pengobatan</h5>
         </div>
         <div class="widget-content nopadding">
           <form action="#" class="form-horizontal">

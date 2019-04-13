@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="{{ asset('/css/matrix-media.css') }}" />
 	<link rel="stylesheet" href="{{ asset('/css/select2.css') }}" />
 	<link href="{{ asset('/css/font-awesome.css') }}" rel="stylesheet" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+	{{-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'> --}}
 	
 
 </head>
@@ -38,15 +38,15 @@
 
 
 	<!-- javascript -->
-	<script src="js/jquery.min.js"></script> 
-	<script src="js/jquery.ui.custom.js"></script> 
-	<script src="js/bootstrap.min.js"></script> 
-	<script src="js/jquery.uniform.js"></script> 
-	<script src="js/select2.min.js"></script> 
-	<script src="js/jquery.dataTables.min.js"></script> 
-	<script src="js/matrix.js"></script> 
-	<script src="js/matrix.tables.js"></script>
-	<script src="js/jquery.validate.js"></script> 
+	<script src="{{ asset('/js/jquery.min.js') }}"></script> 
+	<script src="{{ asset('/js/jquery.ui.custom.js') }}"></script> 
+	<script src="{{ asset('/js/bootstrap.min.js') }}"></script> 
+	<script src="{{ asset('/js/jquery.uniform.js') }}"></script> 
+	<script src="{{ asset('/js/select2.min.js') }}"></script> 
+	<script src="{{ asset('/js/jquery.dataTables.min.js') }}"></script> 
+	<script src="{{ asset('/js/matrix.js') }}"></script> 
+	<script src="{{ asset('/js/matrix.tables.js') }}"></script>
+	<script src="{{ asset('/js/jquery.validate.js') }}"></script> 
 
 	@yield('javascript')
 

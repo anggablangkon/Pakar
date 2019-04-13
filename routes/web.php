@@ -25,6 +25,7 @@ Route::get('/datagejala', 'AdminController@datagejala');
 Route::get('/pendaftaranpasienbaru', 'PerawatController@pendaftaranpasienbaru');
 Route::get('/prosespendaftaranpasienbaru', 'PerawatController@prosespendaftaranpasienbaru');
 Route::get('/pendaftaranpasien', 'PerawatController@pendaftaranpasien');
+Route::get('/pencarianpasien', 'PerawatController@pencarianpasien');
 
 #route aksi untuk pendaftar baru
 Route::get('/transkrippendaftaran/Idanggota={id}', 'Admin\PendaftaranController@buktipendaftaran');

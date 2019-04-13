@@ -129,7 +129,7 @@
                 <tr class="gradeX">
                   <td>PS-0{{ $tampil->noanggota }}</td>
                   <td>{{ $tampil->nama }}</td>
-                  <td>{{ $tampil->jk }}</td>
+                  <td>@if($tampil->jk == 'P') Pria @else Wanita @endif</td>
                   <td>{{ $tampil->tgl_lahir }}</td>
                   <td>{{ $tampil->alamat }}</td>
                   <td>
