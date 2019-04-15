@@ -19,6 +19,9 @@ Route::get('/index', 'PenggunaController@index');
 
 #penggunaan route untuk administrator
 Route::get('/datagejala', 'AdminController@datagejala');
+Route::get('/datajeniskulit', 'AdminController@datajeniskulit');
+Route::post('/simpanjeniskulit', 'AdminController@simpanjeniskulit');
+Route::get('/deletejeniskulit/kdjensikulit={id}', 'AdminController@deletejeniskulit');
 
 
 #penggunaan route untuk perawat
@@ -26,6 +29,7 @@ Route::get('/pendaftaranpasienbaru', 'PerawatController@pendaftaranpasienbaru');
 Route::get('/prosespendaftaranpasienbaru', 'PerawatController@prosespendaftaranpasienbaru');
 Route::get('/pendaftaranpasien', 'PerawatController@pendaftaranpasien');
 Route::get('/pencarianpasien', 'PerawatController@pencarianpasien');
+Route::get('/rekappasistemterdaftar', 'PerawatController@rekappasistemterdaftar');
 
 #route aksi untuk pendaftar baru
 Route::get('/transkrippendaftaran/Idanggota={id}', 'Admin\PendaftaranController@buktipendaftaran');

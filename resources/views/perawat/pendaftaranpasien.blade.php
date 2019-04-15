@@ -102,7 +102,8 @@
         </div>
         <div class="widget-content nopadding">
           <form action="#" class="form-horizontal">
-           
+
+            <p>Belum ada rekap pengobtan yang dilakukan</p>
 
           </form>
         </div>

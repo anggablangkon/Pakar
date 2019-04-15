@@ -22,6 +22,33 @@
           <h5>Data Gejala</h5>
         </div>
 
+        <!-- table untuk menampilkan data gejala -->
+        <table class="table table-bordered data-table">
+              <thead>
+                <tr>
+                  <th>No Anggota</th>
+                  <th>Nama</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Tgl Lahir</th>
+                  <th>Alamat</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="gradeX">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <a href="" class="btn btn-sm btn-info">Edit</a>
+                    <a href="" class="btn btn-sm btn-danger">Hapus</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
       </div>
     </div>
   <!--End-Chart-box--> 

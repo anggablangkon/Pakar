@@ -31,7 +31,8 @@ class PerawatController extends Controller
 
         #memanggil data anggota yang mendaftar untuk rincian pendaftaran
         $dataanggota   = DB::table('t_dataanggota')->where('noanggota', Session::get('pendaftarananggota'))->first();
-        $detailanggota = DB::table('t_dataanggota')->get();
+        
+        $detailanggota = DB::table('t_dataanggota')->where('cdate', date('d-M-y'))->get();
 
 
     	return view('/perawat/pendaftaranpasienbaru', compact('pages', 'noanggota', 'dataanggota', 'detailanggota'));
@@ -87,7 +88,20 @@ class PerawatController extends Controller
         
         #digunakan untuk menampilkan data pasien di seetingan 0 untuk default
         $datapasien    = DB::table('t_dataanggota')->where('noanggota', $id)->first();
+
+        #menampilkan rekap pengobatan 
+        $rekappengobatan = DB::table('t_rekappengobatan')->where('noanggota', $id)->get();
         
-        return view('/perawat/pendaftaranpasien', compact('pages', 'datapasien'));
+
+        return view('/perawat/pendaftaranpasien', compact('pages', 'datapasien', 'rekappengobatan'));
+    }
+
+    public function rekappasistemterdaftar()
+    {
+        #parameter url
+        $pages        = 'rst';
+        $datarekap    = DB::table('t_dataanggota')->where('jk', ['P','W'])->get();
+
+        return view('/perawat/pasienterdaftar', compact('pages', 'datarekap'));
     }
 }
