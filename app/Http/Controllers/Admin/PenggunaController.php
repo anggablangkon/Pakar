@@ -44,6 +44,43 @@ class PenggunaController extends Controller
 
     }
 
+    public function editPengguna(Request $request, $id)
+    {
+        // parameter untuk proses edit
+        $username       = $request->username;
+        $nama           = $request->nama;
+        $password       = $request->password;
+        $role           = $request->role;
+
+        //membuat hashing password manual
+        $password       = bcrypt($password);
+
+        $update = DB::table('users')->where('id', $id)->update([
+
+            'name'           => $nama,
+            'email'          => $username,
+            'password'       => $password,
+            'remember_token' => '',
+            'created_at'     => date("Y-m-d h:i:s"),
+            'updated_at'     => date("Y-m-d h:i:s"),
+            'role'           => $role,
+
+        ]);
+
+        // membuat notfikasi update
+        if ($update == true) {
+            return redirect('/datapengguna')->with('success','Data Pengguna Berhasil Diedit');
+            
+        }else{
+            return redirect('/datapengguna')->with('failed','Data Pengguna Gagal Diedit');
+
+        }
+
+
+    }
+
+
+
     public function deletedatapengguna($id)
     {
     	//menghpus data pengguna
