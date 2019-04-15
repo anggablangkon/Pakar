@@ -26,8 +26,8 @@ class PerawatController extends Controller
     	$pages         = 'pendaftaranpasienbaru';
 
         #membuat no anggota
-        $noanggota     = DB::table('t_dataanggota')->orderBy('noanggota', 'Desc')->count();
-        $noanggota     = $noanggota+1;
+        $noanggota     = DB::table('t_dataanggota')->orderBy('noanggota', 'Desc')->first();
+        $noanggota     = $noanggota->noanggota+1;
 
         #memanggil data anggota yang mendaftar untuk rincian pendaftaran
         $dataanggota   = DB::table('t_dataanggota')->where('noanggota', Session::get('pendaftarananggota'))->first();
@@ -48,7 +48,7 @@ class PerawatController extends Controller
         $alamat         = $request->alamat;
 
         #membuat no anggota
-        $noanggota      = $noanggota+1;
+        $noanggota      = $noanggota;
 
         #menyimpan data kedalam tabel menggunakan query builder
         $simpan = DB::table('t_dataanggota')->insert([
