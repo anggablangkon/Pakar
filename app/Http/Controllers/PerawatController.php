@@ -104,4 +104,14 @@ class PerawatController extends Controller
 
         return view('/perawat/pasienterdaftar', compact('pages', 'datarekap'));
     }
+
+    public function deleteanggota($id)
+    {
+
+        #digunakan untuk menghapus data
+        DB::table('t_dataanggota')->where('noanggota', $id)->delete();
+
+        return redirect('/rekappasistemterdaftar')->with('success', 'Data berhasil dihapus');
+
+    }
 }

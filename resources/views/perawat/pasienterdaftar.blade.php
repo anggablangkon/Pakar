@@ -15,8 +15,11 @@
   <!-- container fluid -->
   <div class="container-fluid">
 
+
   <!--Chart-box-->    
     <div class="row-fluid">
+      <!-- message -->
+      @include('helper/message')
       <div class="widget-box">
         <div class="widget-title bg_lg"><span class="icon"><i class="icon-signal"></i></span>
           <h5>Rekap Data Pasien</h5>
@@ -47,7 +50,7 @@
                   <td style="font-size: 13px">{{ $tampil->alamat }}</td>
                   <td>
                     <a href="" class="btn btn-mini btn-info">Edit</a>
-                    <a href="#myHapus{{ $tampil->noanggota }}" class="btn btn-mini btn-danger">Hapus</a>
+                    <a href="#myHapus{{ $tampil->noanggota }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
                     <!-- modal untuk hapus data -->
                     <div id="myHapus{{ $tampil->noanggota }}" class="modal hide">
                       <div class="modal-header">

@@ -30,6 +30,8 @@ Route::get('/prosespendaftaranpasienbaru', 'PerawatController@prosespendaftaranp
 Route::get('/pendaftaranpasien', 'PerawatController@pendaftaranpasien');
 Route::get('/pencarianpasien', 'PerawatController@pencarianpasien');
 Route::get('/rekappasistemterdaftar', 'PerawatController@rekappasistemterdaftar');
+Route::get('/deleteanggota/Idanggota={id}', 'PerawatController@deleteanggota');
+
 
 #route aksi untuk pendaftar baru
 Route::get('/transkrippendaftaran/Idanggota={id}', 'Admin\PendaftaranController@buktipendaftaran');
