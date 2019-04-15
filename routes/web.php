@@ -42,6 +42,7 @@ Route::get('/datapengguna', 'AdminController@datapengguna');
 #route aksi untuk digunakan proses data pengguna
 Route::post('/createdatapengguna', 'Admin\PenggunaController@buatpengguna');
 Route::get('/deletepengguna/Idanggota={id}', 'Admin\PenggunaController@deletedatapengguna');
+Route::post('/editpengguna/{id}','Admin\PenggunaController@editPengguna');
 
 Auth::routes();
 
