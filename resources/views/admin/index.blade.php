@@ -38,10 +38,8 @@
       </div>
     </div>
   <!--End-Chart-box--> 
-
   </div>
   <!-- end container fluid --> 
-
 </div>
 
 @endsection

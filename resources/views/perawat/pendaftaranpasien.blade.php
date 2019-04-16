@@ -14,6 +14,7 @@
   
   <div class="container-fluid">
   <hr>
+  @include('helper/message')
   <div class="row-fluid">
 
     <!-- form pertama -->

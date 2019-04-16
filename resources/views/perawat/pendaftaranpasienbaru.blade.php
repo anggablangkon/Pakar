@@ -133,8 +133,21 @@
                   <td>{{ $tampil->tgl_lahir }}</td>
                   <td>{{ $tampil->alamat }}</td>
                   <td>
-                    <a href="" class="btn btn-sm btn-info">Edit</a>
-                    <a href="" class="btn btn-sm btn-danger">Hapus</a>
+                    <a href="" class="btn btn-mini btn-info">Edit</a>
+
+                    <a href="#myHapus{{ $tampil->noanggota }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
+                    <!-- modal untuk hapus data -->
+                    <div id="myHapus{{ $tampil->noanggota }}" class="modal hide">
+                      <div class="modal-header">
+                        <button data-dismiss="modal" class="close" type="button">×</button>
+                        <h3>Peringatan Sistem !</h3>
+                      </div>
+                      <div class="modal-body">
+                        <p>Apakah anda yakin akan menghapus data dengan nama <b>{{ $tampil->nama }}</b></p>
+                      </div>
+                      <div class="modal-footer"> <a class="btn btn-primary" href="{{ url('/deleteanggota') }}/Idanggota={{ $tampil->noanggota }}">Hapus</a> <a data-dismiss="modal" class="btn" href="#">Batal</a> </div>
+                    </div>
+                    
                   </td>
                 </tr>
                 @endforeach
