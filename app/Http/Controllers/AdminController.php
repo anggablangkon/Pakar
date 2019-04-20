@@ -33,6 +33,31 @@ class AdminController extends Controller
 
     }
 
+    public function datatindakan()
+    {
+        #parameter url
+        $pages = 'datatindakan';
+
+        return view('/admin/datatindakan', compact('pages'));
+    }
+
+    public function datacream()
+    {
+        #parameter url
+        $pages = 'datacream';
+
+        return view('/admin/datacream', compact('pages'));
+    }
+
+    public function datakerusakankulit()
+    {
+        #parameter url
+        $pages = 'datakerusakankulit';
+
+
+        return view('/admin/datakerusakankulit', compact('pages'));
+    }
+
     public function simpanjeniskulit(Request $request)
     {
         #parameter url

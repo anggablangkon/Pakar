@@ -20,6 +20,9 @@ Route::get('/index', 'PenggunaController@index');
 #penggunaan route untuk administrator
 Route::get('/datagejala', 'AdminController@datagejala');
 Route::get('/datajeniskulit', 'AdminController@datajeniskulit');
+Route::get('/datakerusakankulit', 'AdminController@datakerusakankulit');
+Route::get('/datatindakan', 'AdminController@datatindakan');
+Route::get('/datacream', 'AdminController@datacream');
 Route::post('/simpanjeniskulit', 'AdminController@simpanjeniskulit');
 Route::get('/deletejeniskulit/kdjensikulit={id}', 'AdminController@deletejeniskulit');
 

@@ -13,10 +13,16 @@
     <li class="@if($pages == 'datajeniskulit') active @endif">
       <a href="{{ url('/datajeniskulit') }}"><i class="icon icon-home"></i> <span>Data Jenis Kulit</span></a>
     </li>
-    {{-- <li class="@if($pages == 'datagejala') active @endif"><a href="{{ url('/datagejala') }}"><i class="icon icon-home"></i> <span>Data Gejala</span></a></li> --}}
-    <li class="@if($pages == 'datapenyakit') active @endif">
-      <a href="{{ url('/datapenyakit') }}"><i class="icon icon-home"></i> <span>Data Penyakit</span></a>
+    <li class="@if($pages == 'datakerusakankulit') active @endif">
+      <a href="{{ url('/datakerusakankulit') }}"><i class="icon icon-home"></i> <span>Data Kerusakan Kulit</span></a>
     </li>
+     <li class="@if($pages == 'datatindakan') active @endif">
+      <a href="{{ url('/datatindakan') }}"><i class="icon icon-home"></i> <span>Data Tindakan</span></a>
+    </li>
+     <li class="@if($pages == 'datacream') active @endif">
+      <a href="{{ url('/datacream') }}"><i class="icon icon-home"></i> <span>Data Cream</span></a>
+    </li>
+    {{-- <li class="@if($pages == 'datagejala') active @endif"><a href="{{ url('/datagejala') }}"><i class="icon icon-home"></i> <span>Data Gejala</span></a></li> --}}
   	@endif
     
     <!-- sidebar yang digunakan perawat -->
