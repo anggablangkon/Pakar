@@ -32,8 +32,8 @@
           <form action="{{ url('/simpandatacream') }}" method="post">
           {{ csrf_field() }}
           <div class="controls controls-row">
-            <input type="text" autofocus="" name="kode" placeholder="" class="span3 m-wrap">
-            <input type="text" name="nama" placeholder="" class="span3 m-wrap">
+            <input type="text" autofocus="" required name="kode" placeholder="" class="span3 m-wrap">
+            <input type="text" name="nama" required placeholder="" class="span3 m-wrap">
             <button type="submit" class="btn btn-primary span2 m-wrap">SIMPAN</button>
             <button type="reset" class="btn btn-warning span2 m-wrap">RESET</button>
           </div>
