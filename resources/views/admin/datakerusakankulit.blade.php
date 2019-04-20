@@ -29,7 +29,7 @@
             <label class="span3 m-wrap"><b>Nama Kerusakan Kulit</b></label>
           </div>
           <!-- form action -->
-          <form action="{{ url('/simpanjeniskulit') }}" method="post">
+          <form action="{{ url('/simpankerusakankulit') }}" method="post">
           {{ csrf_field() }}
           <div class="controls controls-row">
             <input type="text" autofocus="" name="kode" placeholder="" class="span3 m-wrap">
@@ -64,28 +64,31 @@
                 </tr>
               </thead>
               <tbody>
+                <?php $no = 1; ?>
+                @foreach($data as $tampil)
                 <tr class="gradeX">
-                  <td style="font-size: 13px"></td>
-                  <td style="font-size: 13px"></td>
-                  <td style="font-size: 13px"></td>
+                  <td style="font-size: 13px">{{ $no++ }}</td>
+                  <td style="font-size: 13px">{{ $tampil->kkerusakankulit }}</td>
+                  <td style="font-size: 13px">{{ $tampil->nkerusakankulit }}</td>
                   <td>
                     <a href="" class="btn btn-mini btn-info">Edit</a>
                     
                     <!-- proses hapus -->
-                    <a href="#myHapus" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
+                    <a href="#myHapus{{ $tampil->id }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
                     <!-- model untuk hapus data -->
-                      <div id="myHapus" class="modal hide">
+                      <div id="myHapus{{ $tampil->id }}" class="modal hide">
                       <div class="modal-header">
                         <button data-dismiss="modal" class="close" type="button">×</button>
                         <h3>Peringatan Sistem !</h3>
                       </div>
                       <div class="modal-body">
-                        <p>Apakah anda yakin akan menghapus data dengan kode <b></b></p>
+                        <p>Apakah anda yakin akan menghapus data dengan kode <b>{{ $tampil->kkerusakankulit }}</b></p>
                       </div>
-                      <div class="modal-footer"> <a class="btn btn-primary" href="{{ url('deletejeniskulit') }}/kdjensikulit=">Hapus</a> <a data-dismiss="modal" class="btn" href="#">Batal</a> </div>
+                      <div class="modal-footer"> <a class="btn btn-primary" href="{{ url('deletekerusakankulit') }}/kdkerusakankulit={{ $tampil->kkerusakankulit }}">Hapus</a> <a data-dismiss="modal" class="btn" href="#">Batal</a> </div>
                     </div>
                   </td>
                 </tr>
+                @endforeach
               </tbody>
             </table>
 

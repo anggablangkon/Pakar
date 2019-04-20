@@ -24,7 +24,15 @@ Route::get('/datakerusakankulit', 'AdminController@datakerusakankulit');
 Route::get('/datatindakan', 'AdminController@datatindakan');
 Route::get('/datacream', 'AdminController@datacream');
 Route::post('/simpanjeniskulit', 'AdminController@simpanjeniskulit');
+Route::post('/simpankerusakankulit', 'AdminController@simpankerusakankulit');
+Route::post('/simpantindakan', 'AdminController@simpantindakan');
+Route::post('/simpandatacream', 'AdminController@simpandatacream');
+
+#proses delete
 Route::get('/deletejeniskulit/kdjensikulit={id}', 'AdminController@deletejeniskulit');
+Route::get('/deletekerusakankulit/kdkerusakankulit={id}', 'AdminController@deletekerusakankulit');
+Route::get('/deletetindakan/kdtindakan={id}', 'AdminController@deletetindakan');
+Route::get('/deletecream/kdcream={id}', 'AdminController@deletecream');
 
 
 #penggunaan route untuk perawat
