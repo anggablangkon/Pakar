@@ -20,13 +20,13 @@
       <div class="widget-box">
         <div class="widget-title bg_lg">
           <span class="icon"><i class="icon-plus"></i></span>
-          <h5>Tambah Jenis Kulit</h5>
+          <h5>Tambah Kerusakan Kulit</h5>
         </div>
         
         <div class="widget-content">
           <div class="controls controls-row">
-            <label class="span3 m-wrap"><b>Kode Jenis Kulit</b></label>
-            <label class="span3 m-wrap"><b>Nama Jenis Kulit</b></label>
+            <label class="span3 m-wrap"><b>Kode Kerusakan Kulit</b></label>
+            <label class="span3 m-wrap"><b>Nama Kerusakan Kulit</b></label>
           </div>
           <!-- form action -->
           <form action="{{ url('/simpanjeniskulit') }}" method="post">
@@ -51,15 +51,15 @@
       <div class="widget-box">
         <div class="widget-title bg_lg">
           <span class="icon"><i class="icon-signal"></i></span>
-          <h5>Data Jenis Kulit</h5>
+          <h5>Data Kerusakan Kulit</h5>
         </div>
         <!-- table untuk menampilkan data gejala -->
         <table class="table table-bordered data-table">
               <thead>
                 <tr>
                   <th style="text-align: left; font-size: 13px">No</th>
-                  <th style="text-align: left; font-size: 13px">Kode Jenis Kulit</th>
-                  <th style="text-align: left; font-size: 13px">Nama Jenis Kulit</th>
+                  <th style="text-align: left; font-size: 13px">Kode Kerusakan Kulit</th>
+                  <th style="text-align: left; font-size: 13px">Nama Kerusakan Kulit</th>
                   <th style="text-align: left; font-size: 13px">Aksi</th>
                 </tr>
               </thead>

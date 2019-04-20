@@ -20,13 +20,13 @@
       <div class="widget-box">
         <div class="widget-title bg_lg">
           <span class="icon"><i class="icon-plus"></i></span>
-          <h5>Tambah Jenis Kulit</h5>
+          <h5>Tambah Tindakan</h5>
         </div>
         
         <div class="widget-content">
           <div class="controls controls-row">
-            <label class="span3 m-wrap"><b>Kode Jenis Kulit</b></label>
-            <label class="span3 m-wrap"><b>Nama Jenis Kulit</b></label>
+            <label class="span3 m-wrap"><b>Kode Tindakan</b></label>
+            <label class="span3 m-wrap"><b>Nama Tindakan</b></label>
           </div>
           <!-- form action -->
           <form action="{{ url('/simpanjeniskulit') }}" method="post">
@@ -58,8 +58,8 @@
               <thead>
                 <tr>
                   <th style="text-align: left; font-size: 13px">No</th>
-                  <th style="text-align: left; font-size: 13px">Kode Jenis Kulit</th>
-                  <th style="text-align: left; font-size: 13px">Nama Jenis Kulit</th>
+                  <th style="text-align: left; font-size: 13px">Kode Tindakan</th>
+                  <th style="text-align: left; font-size: 13px">Nama Tindakan</th>
                   <th style="text-align: left; font-size: 13px">Aksi</th>
                 </tr>
               </thead>
