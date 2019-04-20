@@ -7,7 +7,7 @@
   <div id="content-header">
     <div id="breadcrumb"> 
       <a href="{{ url('/index') }}" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a>
-      <a href="{{ url('/datakulit') }}" title="Data Jenis Kulit" class="tip-bottom"><i class="icon-home"></i> Data Jenis Kulit</a>
+      <a href="{{ url('/datakulit') }}" title="Data Jenis Kulit" class="tip-bottom"><i class="icon-home"></i> Data Tindakan</a>
     </div>
   </div>
 <!--End-breadcrumbs-->
