@@ -28,6 +28,12 @@ Route::post('/simpankerusakankulit', 'AdminController@simpankerusakankulit');
 Route::post('/simpantindakan', 'AdminController@simpantindakan');
 Route::post('/simpandatacream', 'AdminController@simpandatacream');
 
+#proses update
+Route::post('/editjeniskulit/{id}','AdminController@editJenisKulit');
+Route::post('/editkerusakankulit/{id}','AdminController@editkerusakankulit');
+Route::post('/edittindakan/{id}','AdminController@edittindakan');
+Route::post('/editcream/{id}','AdminController@editcream');
+
 #proses delete
 Route::get('/deletejeniskulit/kdjensikulit={id}', 'AdminController@deletejeniskulit');
 Route::get('/deletekerusakankulit/kdkerusakankulit={id}', 'AdminController@deletekerusakankulit');
