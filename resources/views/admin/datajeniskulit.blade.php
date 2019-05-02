@@ -71,8 +71,44 @@
                   <td style="font-size: 13px">{{ $tampil->kjeniskulit }}</td>
                   <td style="font-size: 13px">{{ $tampil->njeniskulit }}</td>
                   <td>
-                    <a href="" class="btn btn-mini btn-info">Edit</a>
-                    
+                    <a href="#myEdit{{$tampil->id}}" data-toggle="modal" class="btn btn-mini btn-info">Edit</a>
+
+                    <!-- modal edit jenis kulit-->
+                    <div id="myEdit{{$tampil->id}}" class="modal hide">
+                      <div class="modal-header">
+                        <button data-dismiss="modal" class="close" type="button">x</button>
+                        <h3>Perbarui Data Jenis Kulit : {{$tampil->njeniskulit}}</h3>
+                      </div>
+
+                      <!-- form action -->
+                      <form action="editjeniskulit/{{ $tampil->id}}" method="post">
+                        {{ csrf_field() }}
+
+                       <!-- modal body -->
+                        <div class="modal-body">
+                          <div class="control-group">
+                            <label class="span3 m-wrap"><b>Kode Jenis Kulit</b></label>
+                            <div class="controls">
+                              <input type="text"  name="kode" value="{{$tampil->kjeniskulit}}">
+
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="span3 m-wrap"><b>Nama Jenis Kulit</b></label>
+                            <div class="controls">
+                              <input type="text"  name="nama" value="{{$tampil->njeniskulit}}">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer"> 
+                            <button type="submit" class="btn btn-primary">Edit</button>
+                            <button data-dismiss="modal" class="btn" href="#">Batal</button>
+                        </div>
+                       <!-- end modal body -->
+                      </form>
+                    </div>
+                    <!-- end modal edit jenis kulit-->
+
                     <!-- proses hapus -->
                     <a href="#myHapus{{ $tampil->id }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
                     <!-- model untuk hapus data -->
