@@ -117,7 +117,7 @@
 													<h3>Perbarui Data Pengguna Atas Nama : {{ $tampilkan->name }}</h3>
 												</div>
 												<!-- form action -->
-												<form action="{{ url('/editpengguna') }}/{{$tampilkan->id}}" method="post">
+												<form action="editpengguna/{{$tampilkan->id}}" method="post">
 													{{ csrf_field() }}
 
 													<div class="modal-body">
@@ -153,6 +153,7 @@
 														</div>
 
 													</div>
+													
 													<div class="modal-footer"> 
 														<button type="submit" class="btn btn-primary">Edit</button>
 														<button data-dismiss="modal" class="btn" href="#">Batal</button>
