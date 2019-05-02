@@ -71,10 +71,45 @@
                   <td style="font-size: 13px">{{ $tampil->kkerusakankulit }}</td>
                   <td style="font-size: 13px">{{ $tampil->nkerusakankulit }}</td>
                   <td>
-                    <a href="" class="btn btn-mini btn-info">Edit</a>
+                    <a href="#myEdit{{ $tampil->id}}" data-toggle="modal" class="btn btn-mini btn-info">Edit</a>
+
+                    <!-- modal edit datakerusakankulit -->
+                    <div id="myEdit{{ $tampil->id}}" class="modal hide">
+                      <div class="modal-header">
+                        <button data-dismiss="modal" class="close" type="button">x</button>
+                        <h3>Perbarui Data Jenis Kerusakan Kulit: {{$tampil->nkerusakankulit}}</h3>
+                      </div>
+
+                      <!-- form action-->
+                      <form action="editkerusakankulit/{{ $tampil->id}}" method="post">
+                        {{ csrf_field() }}
+
+                        <!-- modal body -->
+                        <div class="modal-body">
+                          <div class="control-group">
+                            <label class="span3 m-wrap"><b>Kode kerusakan Kulit</b></label>
+                            <div class="controls">
+                              <input type="text" name="kode" value="{{ $tampil->kkerusakankulit}}" >
+                            </div>
+                          </div>
+                          <div class="control-group">
+                            <label class="span3 m-wrap"><b>Nama Kerusakan Kulit</b></label>
+                            <div class="controls">
+                              <input type="text" name="nama" value="{{ $tampil->nkerusakankulit}}" >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-primary">Edit</button>
+                          <button data-dismiss="modal" class="btn" href="#">Batal</button>
+                        </div>
+                      </form>
+                    </div>
                     
                     <!-- proses hapus -->
                     <a href="#myHapus{{ $tampil->id }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
+
+                    
                     <!-- model untuk hapus data -->
                       <div id="myHapus{{ $tampil->id }}" class="modal hide">
                       <div class="modal-header">
