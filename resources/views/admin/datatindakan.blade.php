@@ -71,7 +71,42 @@
                   <td style="font-size: 13px">{{ $tampil->ktindakan }}</td>
                   <td style="font-size: 13px">{{ $tampil->ntindakan }}</td>
                   <td>
-                    <a href="" class="btn btn-mini btn-info">Edit</a>
+                    <a href="#myEdit{{$tampil->id}}" data-toggle="modal" class="btn btn-mini btn-info">Edit</a>
+
+                    <!-- modal edit tindakan-->
+                    <div id="myEdit{{$tampil->id}}" class="modal hide">
+                      <div class="modal-header">
+                        <button data-dismiss="modal" class="close" type="button">x</button>
+                        <h3>Perbarui Data Tindakan: {{ $tampil->ntindakan }}</h3>
+                      </div>
+
+                    <!-- form action-->
+                    <form action="edittindakan/{{$tampil->id}}" method="post">
+                      {{ csrf_field() }}
+
+                    <!-- modal body-->
+                    <div class="modal-body">
+                      <div class="control-group">
+                        <label class="span3 m-wrap"><b>Kode Tindakan</b></label>
+                        <div class="controls">
+                          <input type="text" name="kode"  value="{{ $tampil->ktindakan}}">
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="span3 m-wrap"><b>Nama Tindakan</b></label>
+                        <div class="controls">
+                          <input type="text" name="nama"  value="{{ $tampil->ntindakan}}">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary">Edit</button>
+                      <button data-dismiss="modal" class="btn" href="#">Batal</button>
+                    </div>
+                    </form>
+
+                    </div>
                     
                     <!-- proses hapus -->
                     <a href="#myHapus{{ $tampil->id }}" data-toggle="modal" class="btn btn-mini btn-danger">Hapus</a>
