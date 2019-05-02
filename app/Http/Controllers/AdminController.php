@@ -98,6 +98,33 @@ class AdminController extends Controller
 
     }
 
+    public function editJenisKulit(Request $request, $id)
+    {
+        // pembanding
+        $kode = $request->kode;
+        $nama = $request->nama;
+
+        // simpan edit 
+        $update = DB::table('t_jeniskulit')->where('id', $id)->update([
+
+            'kjeniskulit'   => $kode,
+            'njeniskulit'   => $nama,
+            'cdate'         => date('d-M-Y'),
+            'udate'         => '',
+            'cby'           => Auth::user()->id,
+        ]);
+
+        if ($update == true) {
+                return redirect('/datajeniskulit')->with('success', 'Data Jenis Kulit Berhasil Diedit');
+        }else{
+                return redirect('/datajeniskulit')->with('failed', 'Data Jenis Kulit Tidak Berhasil Diedit');
+
+        }
+
+
+    }
+
+
     public function simpantindakan(Request $request)
     {
         #parameter url
@@ -133,6 +160,29 @@ class AdminController extends Controller
 
     }
 
+    public function edittindakan(Request $request, $id)
+    {
+        #parameter
+        $kode   = $request->kode;
+        $nama   = $request->nama;
+
+        $update = DB::table('t_tindakan')->where('id', $id)->update([
+
+            'ktindakan' =>$kode,
+            'ntindakan' =>$nama,
+            'cdate'     => date('d-M-Y'),
+            'udate'     =>'',
+            'cby'       =>Auth::user()->id,
+        ]);
+
+        #notifikasi
+        if ($update == true) {
+            return redirect('/datatindakan')->with('success','Data Tindakan Treatment Berhasil Di Edit');
+        }else{
+            return redrect('/datatindakan')->with('failed','Data Tindaka Treatment Tidak Berhasil Di Edit');
+        }
+     }
+
      public function simpandatacream(Request $request)
     {
         #parameter url
@@ -164,6 +214,30 @@ class AdminController extends Controller
 
         }else{
                 return redirect('/datacream')->with('failed', 'Kode Cream Kulit Telah Digunakan');
+        }
+
+    }
+
+    public function editcream(Request $request, $id)
+    {
+        #parameter
+        $kode = $request->kode;
+        $nama = $request->nama;
+
+        $update = DB::table('t_jeniscream')->where('id', $id)->update([
+
+                'kcream'        => $kode,
+                'ncream'        => $nama,
+                'cdate'         => date('d-M-Y'),
+                'udate'         => '',
+                'cby'           => Auth::user()->id,
+        ]);
+
+        #notifikasi
+        if ($update == true) {
+            return redirect('/datacream')->with('success','Data Cream Berhasil Di Edit');
+        }else{
+            return redirect('/datacream')->with('failed','Data Cream Tidak Berhasil Di Edit');
         }
 
     }
@@ -201,6 +275,29 @@ class AdminController extends Controller
                 return redirect('/datakerusakankulit')->with('failed', 'Kode Kerusakan Kulit Telah Digunakan');
         }
 
+    }
+
+    public function editkerusakankulit(Request $request, $id)
+    {
+        // parameter 
+        $kode  = $request->kode;
+        $nama   = $request->nama;
+
+        $update = DB::table('t_kerusakankulit')->where('id', $id)->update([
+
+            'kkerusakankulit'   =>$kode,
+            'nkerusakankulit'   =>$nama,
+            'cdate'             => date('d-M-Y'),
+            'udate'             => '',
+            'cby'               => Auth::user()->id,
+        ]);
+
+        #notifikasi
+        if ($update == true) {
+            return redirect('/datakerusakankulit')->with('success','Data Kerusakan Kulit Berhasil Di Edit');
+        }else{
+            return redirect('/datakerusakankulit')->with('failed','Data Kerusakan Kulit Tidak Berhasil Di Edit');
+        }
     }
 
     public function deletejeniskulit($id)
